@@ -56,17 +56,25 @@ set backspace=indent,eol,start
 set autoindent smartindent expandtab
 set tabstop=4 shiftwidth=4 cinoptions=l1
 set history=10000
-set background=dark
+" set background=dark
 set laststatus=2
 set guicursor=a:blinkon0
 set termguicolors
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+function! MacOSIsDarkMode() abort
+  let l:mode = system('defaults read -g AppleInterfaceStyle 2>/dev/null')
+  return match(l:mode, 'Dark') >= 0
+endfunction
+
 " colorscheme seoul256
-" colorscheme nord
 " colorscheme mynord
-colorscheme absent-light
+if MacOSIsDarkMode()
+  colorscheme nord
+else
+  colorscheme absent-light
+endif
 " hi Normal guifg=#ffffff
 hi Comment ctermfg=gray guifg=#aabbcc
 " hi Comment guifg=#aabbcc cterm=none
@@ -275,5 +283,5 @@ command! -bang -nargs=* GGrep
 let g:GPGExecutable = "gpg"
 let g:GPGPreferSymmetric = 1
 
-
+xnoremap <leader>s :call utilfuncs#SumNumbersInVisual()<CR>
 

@@ -9,3 +9,5 @@ theme = nord
 
 keybind = ctrl+m=text:\n
 macos-option-as-alt = true
+
+desktop-notifications = true

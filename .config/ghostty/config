@@ -1,0 +1,11 @@
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+
+font-size = 11
+font-family = Monaco
+
+theme = nord
+
+keybind = ctrl+m=text:\n
+macos-option-as-alt = true

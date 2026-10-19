@@ -40,6 +40,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'dense-analysis/ale'
   Plug 'vim-scripts/DrawIt'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " ============================================================
@@ -285,3 +287,8 @@ let g:GPGPreferSymmetric = 1
 
 xnoremap <leader>s :call utilfuncs#SumNumbersInVisual()<CR>
 
+" ============================================================
+" airline
+" ============================================================
+" let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
